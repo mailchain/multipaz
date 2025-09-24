@@ -496,8 +496,9 @@ object OpenID4VP {
                         claimsSet = vpToken.jsonObject,
                         recipientPublicKey = reReaderPublicKey,
                         encAlg = reEncAlg,
-                        apu = nonce.encodeToByteString(),
-                        apv = walletGeneratedNonce.encodeToByteString(),
+                        // TODO: set correct apu value SessionTranscript.mdocGeneratedNonce https://github.com/openwallet-foundation/multipaz/issues/1288
+                        apu = walletGeneratedNonce.encodeToByteString(), 
+                        apv = nonce.encodeToByteString(),
                         kid = reKid,
                         compressionLevel = compressionLevel
                     )
